@@ -2,7 +2,7 @@ const express = require('express');
 const multer = require('multer');
 const mongoose = require('mongoose');
 require('dotenv').config();
-const controller = require('./controller/index');
+const routes = require('./routes/index');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
@@ -52,7 +52,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded());
 
-app.use(`/api`, controller);
+app.use(`/api`, routes);
 
 app.post(`/api/upload`, upload.single('file'), (req, res) => {
     return res.status(200).json('파일이 업로드되었습니다.');

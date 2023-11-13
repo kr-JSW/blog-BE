@@ -1,8 +1,8 @@
-const posts = require('../routes/posts');
+const posts = require('../controller/postCon');
 const router = require('express').Router();
-const userRoute = require('../routes/userRoute');
-const codeRoutes = require('../routes/codeRoute');
-const categoryRoutes = require('../routes/categoryRoute');
+const userRoute = require('../controller/userCon');
+const codeRoutes = require('../controller/codeCon');
+const categoryRoutes = require('../controller/categoryCon');
 
 router.post('/posts/createPost', posts.createPost);
 
